@@ -1,0 +1,87 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #ffffff;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+
+
+/*
+ * Base structure
+ */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+body {
+  padding-bottom: 80px;
+  min-height: 75rem;
+  background-color: rgb(236, 236, 236);
+}
+
+#footer-container {
+  min-height: 100%;
+  position: relative;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* Set the fixed height of the footer here */
+  height: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+#footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* home page background image */
+body {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/static/images/car44.jpg");
+}
+
+.mapbackground {
+  background-image: url("/static/images/mapbackground.jpg");
+}
+
+.navbar-nav {
+  text-align: left;
+}
+
+.active {
+  color: #fff;
+}
+
+.credits-link {
+  color: #333;
+}
+
+.credits a {
+  color: #333;
+}

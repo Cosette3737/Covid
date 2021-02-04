@@ -1,0 +1,22 @@
+html
+body{
+    height: 100%;
+
+    /* The image used */
+    background-image: url("/static/images/mapbackground.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+} 
+
+/* viz3 (map) */
+#regions_div {
+    width: 900px;
+    height: 500px;
+  }
