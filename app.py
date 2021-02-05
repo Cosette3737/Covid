@@ -32,10 +32,14 @@ def covid_data():
 
     # creat dataframe of wins per country from database
     covid_data = pd.read_sql('SELECT * FROM covid;', connection)
+    print(covid_data)
     # convert dataframe to list of lists with header
-    covid_data = covid_data.to_dict('index')
+    covid_data_list=[covid_data.values.tolist()] \
+        + covid_data.values.tolist()
 
-    return jsonify(covid_data)
+    response = jsonify(covid_data_list)
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 if __name__ == '__main__':

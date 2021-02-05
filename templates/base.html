@@ -17,10 +17,11 @@
 </head>
 
 <body class="{% if request.path=='/' %}homepage{%endif %}">
-
   {% include 'navbar.html' %}
   
   {% block main %}
+  
+ 
   <main class="container">
     <div class="p-5 rounded">
       <h1>The state of Covid in the States</h1>
