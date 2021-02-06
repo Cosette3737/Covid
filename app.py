@@ -49,7 +49,7 @@ def state_data():
     connection = engine.connect()
 
     # creat dataframe of wins per country from database
-    state_data = pd.read_sql('SELECT * FROM bar;', connection)
+    state_data = pd.read_sql('SELECT * FROM tested;', connection)
 
     print(state_data)
 

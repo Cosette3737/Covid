@@ -61,26 +61,26 @@ fetch('/state_data')
 
  function createBar(statedata) {
     var states = [];
-    var deaths = [];
-    var infected = [];
+    var tested = [];
+    var population = [];
     console.log(statedata);
     for (let i = 1; i < statedata.length; i++) {
     states.push(statedata[i][0]);
-    deaths.push(statedata[i][2]);
-    infected.push(statedata[i][1]);
+    tested.push(statedata[i][1]);
+    population.push(statedata[i][2]);
     };
-    console.log(infected);
+    
     var trace1 = {
         x: states,
-        y: deaths,
-        name: 'Number of Deaths',
+        y: tested,
+        name: 'Tests Performed',
         type: 'bar'
       };
       
       var trace2 = {
         x: states,
-        y: infected,
-        name: 'Number of Infected',
+        y: population,
+        name: 'State Population',
         type: 'bar'
       };
       
