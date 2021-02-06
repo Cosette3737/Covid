@@ -31,13 +31,32 @@ def covid_data():
     connection = engine.connect()
 
     # creat dataframe of wins per country from database
-    covid_data = pd.read_sql('SELECT * FROM covid;', connection)
+    covid_data = pd.read_sql('SELECT * FROM infected;', connection)
     print(covid_data)
     # convert dataframe to list of lists with header
-    covid_data_list=[covid_data.values.tolist()] \
+    covid_data_list=[covid_data.columns.values.tolist()] \
         + covid_data.values.tolist()
 
     response = jsonify(covid_data_list)
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
+
+@app.route('/state_data', methods=['GET'])
+def state_data():
+    #create engine to connect to SQL database
+    engine = create_engine("postgresql://postgres:postgres@localhost/covid")
+    #connect to SQL database
+    connection = engine.connect()
+
+    # creat dataframe of wins per country from database
+    state_data = pd.read_sql('SELECT * FROM bar;', connection)
+
+    print(state_data)
+
+    
+    state_data_list=[state_data.columns.values.tolist()] \
+        + state_data.values.tolist()
+    response = jsonify(state_data_list)
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 

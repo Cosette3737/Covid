@@ -1,19 +1,11 @@
 fetch('/covid_data')
       .then(function(response) {
+          //console.log(response);
         return response.json();
     }).then(function (data) {
        // console.log('GET response:');
-        let coviddata = data;
-        headers=['state', 'infection'];
-        coviddata2= [[headers],
-                    [coviddata],];
-        console.log(coviddata2);
-        var i;
-        for (i = 1; i < 51; i++) {
-            mapdata = [coviddata2[i][1], coviddata2[i][3]]
-        };
+        let mapdata = data;
         createBar(mapdata);
-        console.log(mapdata);
         });
 
  function createBar(mapdata) {
@@ -34,8 +26,19 @@ fetch('/covid_data')
         //console.log(mapdata);
         // set options
         var options = {
-            colorAxis: {colors: ['#e7711c', '#4374e0']},
-            backgroundColor: '#d6d6d6'
+            colorAxis: {colors: ['#1c92e7',
+            '#49a7eb',
+            '#60b2ee',
+            '#76bdf0',
+            '#8dc8f3',
+            '#a4d3f5',
+            '#badef7',
+            '#d1e9fa',
+            ]},
+            backgroundColor: 'eff3f6',
+            region: 'US',
+            displayMode:'regions',
+            resolution: 'provinces',
         };
 
         // set where in html to put chart
@@ -45,4 +48,46 @@ fetch('/covid_data')
         chart.draw(data, options);
     }
 
+fetch('/state_data')
+      .then(function(response) {
+          //console.log(response);
+        return response.json();
+    }).then(function (data) {
+       // console.log('GET response:');
+        let statedata = data;
+        createBar(statedata);
+        });
+
+
+ function createBar(statedata) {
+    var states = [];
+    var deaths = [];
+    var infected = [];
+    console.log(statedata);
+    for (let i = 1; i < statedata.length; i++) {
+    states.push(statedata[i][0]);
+    deaths.push(statedata[i][2]);
+    infected.push(statedata[i][1]);
+    };
+    console.log(infected);
+    var trace1 = {
+        x: states,
+        y: deaths,
+        name: 'Number of Deaths',
+        type: 'bar'
+      };
+      
+      var trace2 = {
+        x: states,
+        y: infected,
+        name: 'Number of Infected',
+        type: 'bar'
+      };
+      
+      var data = [trace1, trace2];
+      
+      var layout = {barmode: 'stack'};
+      
+      Plotly.newPlot('myDiv', data, layout);;
+ }
 }
