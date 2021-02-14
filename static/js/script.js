@@ -56,42 +56,44 @@ fetch('/state_data')
        // console.log('GET response:');
         let statedata = data;
         createBar(statedata);
+        console.log(statedata);
         });
 
 
  function createBar(statedata) {
     var states = [];
+    var infected = [];
     var tested = [];
-    var population = [];
-    //console.log(statedata);
+    console.log(statedata);
     for (let i = 1; i < statedata.length; i++) {
     states.push(statedata[i][0]);
-    tested.push(statedata[i][1]);
-    population.push(statedata[i][2]);
+    infected.push(statedata[i][1]);
+    tested.push(statedata[i][2]);
     };
     
     var trace1 = {
         x: states,
         y: tested,
-        name: 'Tests Performed',
-        marker: {color: '#808080'},
+        name: 'Population Tested %',
+        marker: {color: '#1c92e7'},
         type: 'bar'
       };
       
       var trace2 = {
         x: states,
-        y: population,
-        name: 'State Population',
-        marker: {color: '#1c92e7'},
+        y: infected,
+        name: 'Positivity Rate',
+        marker: {color: '#808080'},
         type: 'bar'
       };
       
       var data = [trace1, trace2];
       
       var layout = {
-        barmode: 'stack'};
+        barmode: 'stack',
+        margin:{b:120}};
       
-      Plotly.newPlot('myDiv', data, layout);
+      Plotly.newPlot('myDiv', data, layout, {displayModeBar:false});
     }
  }
 
@@ -101,10 +103,10 @@ fetch('/filtered_data')
         
       return response.json();
     }).then(function (data) {
-        console.log(data);
+        //console.log(data);
         let filtered_data = data;
         console.log(filtered_data);
-        let filtered_dataArr = filtered_data[1];
+        
         var states = [];
         var infected = [];
         var deaths = [];
@@ -125,13 +127,7 @@ fetch('/filtered_data')
             //     console.log(value)});
             var demo_meta = d3.select("#sample-metadata");
                     demo_meta.html("");
-                    Object.entries(filtered_data[1]).forEach(([key,value]) => {
+                    Object.entries(filtered_data[0]).forEach(([key,value]) => {
                         demo_meta.append("p").text(`${key} : ${value}`);
-                    // demo_meta.append("p").text(Object.values(states)[1]);
-                    // demo_meta.append("p").text(Object.values(filtered_data)[1][1]);
-                    // demo_meta.append("p").text(Object.values(infected)[1]);
-                    // demo_meta.append("p").text("Number of Deaths:",Object.values(deaths)[1]);
-                    // demo_meta.append("p").text("Number of Hospitals:",Object.values(hospitals)[1]);
-                    // demo_meta.append("p").text("Inequality Distribution:", Object.values(gini)[1]);
-                        //console.log(states);
+                   
                     })}})
