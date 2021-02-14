@@ -14,3 +14,8 @@ CREATE VIEW bar1 AS
 SELECT state, c.infected, c.tested
 FROM covid AS c; 
 select * from bar;
+
+CREATE VIEW tested AS
+SELECT state, c.tested, c.population
+FROM covid AS c; 
+select * from flu;

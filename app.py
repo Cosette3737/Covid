@@ -13,15 +13,7 @@ app = Flask(__name__,
 
 @app.route('/')
 def home():
-    return render_template('base.html')
-
-@app.route('/viz1')
-def viz1():
     return render_template('viz1.html')
-
-@app.route('/credits')
-def credits():
-    return render_template('credits.html')
 
 @app.route('/covid_data', methods=['GET'])
 def covid_data():
@@ -57,6 +49,26 @@ def state_data():
     state_data_list=[state_data.columns.values.tolist()] \
         + state_data.values.tolist()
     response = jsonify(state_data_list)
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
+
+
+@app.route('/filtered_data', methods=['GET'])
+def filtered_data():
+    #create engine to connect to SQL database
+    engine = create_engine("postgresql://postgres:postgres@localhost/covid")
+    #connect to SQL database
+    connection = engine.connect()
+
+    # creat dataframe of wins per country from database
+    filtered_data = pd.read_sql('SELECT * FROM filtered_data;', connection)
+
+    print(filtered_data)
+
+    
+    filtered_data_list=[filtered_data.columns.values.tolist()] \
+        + filtered_data.values.tolist()
+    response = jsonify(filtered_data_list)
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
