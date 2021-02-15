@@ -22,8 +22,14 @@ A custom dashboard that allows the user to interact with Covid related data from
     - Heroku
 
  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Process
-The US Covid dataset was loaded into Postgress and multiple views were formed.  HTML, JS, and Python were used with Flask to import the views from Postgress. Interactive US map was created using Goolge Charts; Plotly Bar chart was used to compare testing among states, and a Demographics area was created with a custom dropdown bar.  
+## Back End
+The US Covid dataset was loaded into Postgress SQL and Multiple views, and tables were created.  These were imported into the python app and using flask, API, and Sqlachemy.    
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Front End
+With the help of HTML, JS, and Python, an Interactive US map was created using Goolge Charts; Plotly Bar chart was used to compare testing among states, and a Demographics area was created with a custom dropdown bar. Custom HTML and CSS code were used to create the dashboard.
 
 
 
