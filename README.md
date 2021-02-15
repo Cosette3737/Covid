@@ -29,3 +29,4 @@ The US Covid dataset was loaded into Postgress and multiple views were formed.  
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Visit the Dataset Here: https://www.kaggle.com/nightranger77/covid19-state-data
