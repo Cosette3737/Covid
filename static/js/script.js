@@ -123,16 +123,18 @@ fetch('/filtered_data')
           console.log(dataset); 
             for (let i = 1; i < filtered_data.length; i++) {
                // console.log(filtered_data[i][0]); 
+               label=["State", "Infected", "Deaths", "Hospitals", "Inequality", "Health Spending"];
               if (dataset === filtered_data[i][0]) {
                  var ind = i;
-                 console.log(dataset);
-                 console.log(filtered_data[i][0]);
-                           
-                };
-            }
-            var demo_meta = d3.select("#sample-metadata");
+                 var demo_meta = d3.select("#sample-metadata");
                   demo_meta.html("");
-                  Object.entries(filtered_data[ind]).forEach(([key,value]) => {
-                    demo_meta.append("p").text(`${key} : ${value}`);
-                  })}
+                  //Object.entries(filtered_data[ind]).forEach(() => {
+                    demo_meta.append("p").text(`State: ${filtered_data[i][0]}`);
+                    demo_meta.append("p").text(`Infected: ${filtered_data[i][1]}`);
+                    demo_meta.append("p").text(`Deaths: ${filtered_data[i][2]}`);
+                    demo_meta.append("p").text(`Hospitals: ${filtered_data[i][3]}`);
+                    demo_meta.append("p").text(`Gini %: ${filtered_data[i][4]}`);
+                    demo_meta.append("p").text(`Health $ per Person: ${filtered_data[i][5]}`);
+              }
+            }}
         })
