@@ -23,8 +23,7 @@ fetch('/covid_data')
 
         // set data
         var data = google.visualization.arrayToDataTable(mapdata);
-        //console.log(mapdata);
-        // set options
+        
         var options = {
             colorAxis: {colors: ['#1c92e7',
             '#49a7eb',
@@ -106,14 +105,7 @@ fetch('/filtered_data')
         let filtered_data = data;
         console.log(filtered_data);
         
-        // var states = [];
-        // var infected = [];
-        // var deaths = [];
-        // var hospitals = [];
-        // var gini = [];
-        // var health_spending = [];
-   
-        for (let i = 1; i < filtered_data.length; i++) {
+      for (let i = 1; i < filtered_data.length; i++) {
          d3.select("#selDataset").append("option").text(filtered_data[i][0]).property("value")};
           
     d3.selectAll("#selDataset").on("change", updateInfo);    
@@ -128,7 +120,6 @@ fetch('/filtered_data')
                  var ind = i;
                  var demo_meta = d3.select("#sample-metadata");
                   demo_meta.html("");
-                  //Object.entries(filtered_data[ind]).forEach(() => {
                     demo_meta.append("p").text(`State: ${filtered_data[i][0]}`);
                     demo_meta.append("p").text(`Infected: ${filtered_data[i][1]}`);
                     demo_meta.append("p").text(`Deaths: ${filtered_data[i][2]}`);
