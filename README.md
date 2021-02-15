@@ -1,4 +1,4 @@
-# Covid Across The Nation
+# Covid Across The Nation #
 
 ![Covid photo](https://raw.githubusercontent.com/Cosette3737/Covid/main/static/images/covid%20page.JPG)
 
