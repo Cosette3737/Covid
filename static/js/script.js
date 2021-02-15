@@ -56,7 +56,7 @@ fetch('/state_data')
        // console.log('GET response:');
         let statedata = data;
         createBar(statedata);
-        console.log(statedata);
+        //console.log(statedata);
         });
 
 
@@ -64,7 +64,7 @@ fetch('/state_data')
     var states = [];
     var infected = [];
     var tested = [];
-    console.log(statedata);
+    //console.log(statedata);
     for (let i = 1; i < statedata.length; i++) {
     states.push(statedata[i][0]);
     infected.push(statedata[i][1]);
@@ -100,34 +100,39 @@ fetch('/state_data')
 
 fetch('/filtered_data')
     .then(function(response) {
-        
-      return response.json();
+        return response.json();
     }).then(function (data) {
         //console.log(data);
         let filtered_data = data;
         console.log(filtered_data);
         
-        var states = [];
-        var infected = [];
-        var deaths = [];
-        var hospitals = [];
-        var gini = [];
-        var health_spending = [];
+        // var states = [];
+        // var infected = [];
+        // var deaths = [];
+        // var hospitals = [];
+        // var gini = [];
+        // var health_spending = [];
    
         for (let i = 1; i < filtered_data.length; i++) {
-            states.push(filtered_data[i][0]);
-            infected.push(filtered_data[i][1]);
-            deaths.push(filtered_data[i][2]);
-            hospitals.push(filtered_data[i][3]);
-            gini.push(filtered_data[i][4]);
-            health_spending.push(filtered_data[i][5]);
-            var dropdown = d3.select("#selDataset").append("option").text(filtered_data[i][0]).property("value");
-            // .on("change",function(d) {
-            //     var value = d3.select(this).property("value");
-            //     console.log(value)});
+         d3.select("#selDataset").append("option").text(filtered_data[i][0]).property("value")};
+          
+    d3.selectAll("#selDataset").on("change", updateInfo);    
+    function updateInfo() {
+      var dropDown = d3.select("#selDataset");
+          var dataset = dropDown.property("value");
+          console.log(dataset); 
+            for (let i = 1; i < filtered_data.length; i++) {
+               // console.log(filtered_data[i][0]); 
+              if (dataset === filtered_data[i][0]) {
+                 var ind = i;
+                 console.log(dataset);
+                 console.log(filtered_data[i][0]);
+                           
+                };
+            }
             var demo_meta = d3.select("#sample-metadata");
-                    demo_meta.html("");
-                    Object.entries(filtered_data[0]).forEach(([key,value]) => {
-                        demo_meta.append("p").text(`${key} : ${value}`);
-                   
-                    })}})
+                  demo_meta.html("");
+                  Object.entries(filtered_data[ind]).forEach(([key,value]) => {
+                    demo_meta.append("p").text(`${key} : ${value}`);
+                  })}
+        })
