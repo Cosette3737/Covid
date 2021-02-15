@@ -23,7 +23,7 @@ A custom dashboard that allows the user to interact with Covid related data from
 
  
 # Process
-The US Covid dataset was loaded into Postgress and multiple views were formed.  HTML, JS, and Python were used with Flask to import the views from Postgress. Interactive US map was created using Goolge Charts, Plotly Bar chart, and a Demographics area with a dropdown bar.  
+The US Covid dataset was loaded into Postgress and multiple views were formed.  HTML, JS, and Python were used with Flask to import the views from Postgress. Interactive US map was created using Goolge Charts; Plotly Bar chart was used to compare testing among states, and a Demographics area was created with a custom dropdown bar.  
 
 
 
