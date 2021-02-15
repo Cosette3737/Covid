@@ -125,7 +125,7 @@ fetch('/filtered_data')
                     demo_meta.append("p").text(`Deaths: ${filtered_data[i][2]}`);
                     demo_meta.append("p").text(`Hospitals: ${filtered_data[i][3]}`);
                     demo_meta.append("p").text(`Gini %: ${filtered_data[i][4]}`);
-                    demo_meta.append("p").text(`Health $ per Person: ${filtered_data[i][5]}`);
+                    demo_meta.append("p").text(`State Health Spending: ${filtered_data[i][5]}`);
               }
             }}
         })
