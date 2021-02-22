@@ -1,3 +1,3 @@
 from covid import app
-if name=="main":
+if name == "main":
     app.run()
