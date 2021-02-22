@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, desc
 import datetime as dt
 import pandas as pd
-
+import os
 
 app = Flask(__name__, 
             static_folder='static',
