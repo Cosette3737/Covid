@@ -1,3 +1,3 @@
-from Covid import  create_app
-
-app = create_app()
+from covid import app
+if name=="main":
+    app.run()
