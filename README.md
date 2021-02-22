@@ -36,3 +36,4 @@ With the help of HTML, JS, and Python, an Interactive US map was created using G
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Visit the Dataset Here: https://www.kaggle.com/nightranger77/covid19-state-data
+# covid2020
