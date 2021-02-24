@@ -1,6 +1,6 @@
 fetch('/covid_data')
       .then(function(response) {
-          //console.log(response);
+          console.log(response);
         return response.json();
     }).then(function (data) {
        // console.log('GET response:');
@@ -55,7 +55,7 @@ fetch('/state_data')
        // console.log('GET response:');
         let statedata = data;
         createBar(statedata);
-        //console.log(statedata);
+        console.log(statedata);
         });
 
 
