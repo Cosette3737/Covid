@@ -94,7 +94,7 @@ fetch('/state_data')
       
       Plotly.newPlot('myDiv', data, layout, {displayModeBar:false});
     }
- }
+ 
 
 
 fetch('/filtered_data')
