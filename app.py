@@ -19,7 +19,7 @@ def home():
 @app.route('/covid_data', methods=['GET'])
 def covid_data():
     #create engine to connect to SQL database
-    engine = create_engine("postgresql://postgres:postgres@localhost/covid")
+    engine = create_engine("postgres://llnvzqitayvosz:0c1511137a621fdcc484c0a1afdccf84d1b10e28b5370f0af994ca3113fad4d8@ec2-3-213-85-90.compute-1.amazonaws.com:5432/d3livmv6adnqas")
     #connect to SQL database
     connection = engine.connect()
 
@@ -37,7 +37,7 @@ def covid_data():
 @app.route('/state_data', methods=['GET'])
 def state_data():
     #create engine to connect to SQL database
-    engine = create_engine("postgresql://postgres:postgres@localhost/covid")
+    engine = create_engine("postgres://llnvzqitayvosz:0c1511137a621fdcc484c0a1afdccf84d1b10e28b5370f0af994ca3113fad4d8@ec2-3-213-85-90.compute-1.amazonaws.com:5432/d3livmv6adnqas")
     #connect to SQL database
     connection = engine.connect()
 
@@ -57,7 +57,7 @@ def state_data():
 @app.route('/filtered_data', methods=['GET'])
 def filtered_data():
     #create engine to connect to SQL database
-    engine = create_engine("postgresql://postgres:postgres@localhost/covid")
+    engine = create_engine("postgres://llnvzqitayvosz:0c1511137a621fdcc484c0a1afdccf84d1b10e28b5370f0af994ca3113fad4d8@ec2-3-213-85-90.compute-1.amazonaws.com:5432/d3livmv6adnqas")
     #connect to SQL database
     connection = engine.connect()
 
