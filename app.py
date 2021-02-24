@@ -7,7 +7,7 @@ import sqlalchemy.dialects.sqlite
 import datetime as dt
 import pandas as pd
 import os
-import psycopg2
+
 
 
 app = Flask(__name__, 
