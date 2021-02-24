@@ -42,3 +42,8 @@ CREATE VIEW percent6 AS
 SELECT state,  ROUND(Cast(infected AS FLOAT)/(Cast(tested AS Float))*100) AS Percentinfected, ROUND(Cast(tested AS FLOAT)/(Cast(population AS Float))*100) AS Percenttested
 FROM covid;
 SELECT * FROM  percent6; percent;
+
+CREATE VIEW filtered_data AS
+SELECT state, c.infected, c.deaths, c.hospitals, c.gini, c.health_spending
+FROM covid AS c; 
+select * from filtered_data;
