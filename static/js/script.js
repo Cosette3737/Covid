@@ -1,6 +1,6 @@
 fetch('/covid_data')
       .then(function(response) {
-          console.log(response);
+          //console.log(response);
         return response.json();
     }).then(function (data) {
         let mapdata = data;
@@ -56,7 +56,7 @@ fetch('/state_data')
        // console.log('GET response:');
         let statedata = data;
         createBar(statedata);
-        console.log(statedata);
+        //console.log(statedata);
         });
 
 
@@ -104,7 +104,7 @@ fetch('/filtered_data')
     }).then(function (data) {
         //console.log(data);
         let filtered_data = data;
-        console.log(filtered_data);
+        //console.log(filtered_data);
         
       for (let i = 1; i < filtered_data.length; i++) {
          d3.select("#selDataset").append("option").text(filtered_data[i][0]).property("value")};
