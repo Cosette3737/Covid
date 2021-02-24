@@ -46,7 +46,7 @@ fetch('/covid_data')
         // draw chart using data & options specified
         chart.draw(data, options);
     }
-
+  }
 fetch('/state_data')
       .then(function(response) {
           //console.log(response);
