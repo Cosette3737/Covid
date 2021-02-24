@@ -3,7 +3,7 @@ fetch('/covid_data')
           console.log(response);
         return response.json();
     }).then(function (data) {
-       // console.log('GET response:');
+        console.log('GET response:');
         let mapdata = data;
         createBar(mapdata);
         });
