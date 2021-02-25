@@ -1,5 +1,4 @@
-// get the data from the flask api
-fetch('/covid_data')
+ fetch('/covid_data')
       .then(function (response) {
           return response.json();
       }).then(function (data) {
@@ -14,7 +13,7 @@ function createMap (mapData) {
     // load the Google GeoChart package
     google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': "AIzaSyBbtf-cQpfWW8agzsIEXb5W9dIknS9ODXg"
+        'mapsApiKey': AIzaSyCyoQn8h1sxhW6eEPE7mwh2RTWG29qOmfA
     });
 
     // call function to draw the map
@@ -29,13 +28,13 @@ function createMap (mapData) {
         // set options
         var options = {
             colorAxis: {colors: ['#1c92e7',
-                      '#49a7eb',
-                      '#60b2ee',
-                      '#76bdf0',
-                      '#8dc8f3',
-                      '#a4d3f5',
-                      '#badef7',
-                      '#d1e9fa',]},
+              '#49a7eb',
+              '#60b2ee',
+              '#76bdf0',
+              '#8dc8f3',
+              '#a4d3f5',
+              '#badef7',
+              '#d1e9fa',]},
             backgroundColor: 'eff3f6',
             region: 'US',
             displayMode: 'regions',
@@ -49,6 +48,57 @@ function createMap (mapData) {
     }
 
 }
+
+
+//fetch('/covid_data')
+//       .then(function(response) {
+//           //console.log(response);
+//         return response.json();
+//     }).then(function (data) {
+//         let mapdata = data;
+//         console.log(mapdata);
+//         createBar(mapdata);
+//     });
+  // function createBar(mapdata) {
+  //     console.log("hello");
+  //     google.charts.load('current', {
+  //       'packages':['geochart'],
+  //       'mapsApiKey': "AIzaSyBbtf-cQpfWW8agzsIEXb5W9dIknS9ODXg"
+        
+  //     });
+
+  //   // call function to draw the map
+  //     google.charts.setOnLoadCallback(drawRegionsMap);
+
+  //   // function to create map
+  //     function drawRegionsMap() {
+
+  //       // set data
+  //         var data = google.visualization.arrayToDataTable(mapdata);
+        
+  //         var options = {
+  //           colorAxis: {colors: ['#1c92e7',
+  //           '#49a7eb',
+  //           '#60b2ee',
+  //           '#76bdf0',
+  //           '#8dc8f3',
+  //           '#a4d3f5',
+  //           '#badef7',
+  //           '#d1e9fa',
+  //           ]},
+  //           backgroundColor: 'eff3f6',
+  //           region: 'US',
+  //           displayMode:'regions',
+  //           resolution: 'provinces',
+  //         };
+
+  //       // set where in html to put chart
+  //         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+  //       // draw chart using data & options specified
+  //         chart.draw(data, options);
+  //   }
+  // }
   
 fetch('/state_data')
       .then(function(response) {
