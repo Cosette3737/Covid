@@ -129,4 +129,4 @@ fetch('/filtered_data')
                     demo_meta.append("p").text(`State Health Spending: ${filtered_data[i][5]}`);
               }
             }}
-        })
+        })})
