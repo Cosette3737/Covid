@@ -30,7 +30,7 @@ function createMap (mapData) {
         var options = {
             colorAxis: {colors: ['#1c92e7','#49a7eb', '#60b2ee','#76bdf0','#8dc8f3','#a4d3f5','#badef7','#d1e9fa']},
             backgroundColor: 'eff3f6',
-            region: 'us_metro',
+            region: 'US',
             displayMode: 'regions'
         };
 
