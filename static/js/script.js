@@ -11,9 +11,10 @@
 // function to create the map      
 function createMap (mapData) {
     // load the Google GeoChart package
+    console.log(mapData);
     google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': AIzaSyCyoQn8h1sxhW6eEPE7mwh2RTWG29qOmfA
+        'mapsApiKey': "AIzaSyCyoQn8h1sxhW6eEPE7mwh2RTWG29qOmfA"
     });
 
     // call function to draw the map
