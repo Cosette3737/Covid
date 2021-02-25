@@ -8,24 +8,24 @@ fetch('/covid_data')
         createBar(mapdata);
         });
 
- function createBar(mapdata) {
-    console.log(mapdata);
-    google.charts.load('current', {
+  function createBar(mapdata) {
+      console.log(mapdata),
+      google.charts.load('current', {
         'packages':['geochart'],
         'mapsApiKey': "AIzaSyDSZfX2xxa071XwxZWy0xFI-jmlSWWSvgg",
         
-    });
+      });
 
     // call function to draw the map
-    google.charts.setOnLoadCallback(drawRegionsMap);
+      google.charts.setOnLoadCallback(drawRegionsMap);
 
     // function to create map
-    function drawRegionsMap() {
+      function drawRegionsMap() {
 
         // set data
-        var data = google.visualization.arrayToDataTable(mapdata);
+          var data = google.visualization.arrayToDataTable(mapdata);
         
-        var options = {
+          var options = {
             colorAxis: {colors: ['#1c92e7',
             '#49a7eb',
             '#60b2ee',
@@ -39,13 +39,13 @@ fetch('/covid_data')
             region: 'US',
             displayMode:'regions',
             resolution: 'provinces',
-        };
+          };
 
         // set where in html to put chart
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+          var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
         // draw chart using data & options specified
-        chart.draw(data, options);
+          chart.draw(data, options);
     }
   }
 fetch('/state_data')
