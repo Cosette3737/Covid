@@ -8,10 +8,10 @@ fetch('/covid_data')
         createBar(mapdata);
     });
   function createBar(mapdata) {
-      console.log(mapdata);
+      console.log("hello");
       google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': "AIzaSyBbtf-cQpfWW8agzsIEXb5W9dIknS9ODXg",
+        'mapsApiKey': "AIzaSyBbtf-cQpfWW8agzsIEXb5W9dIknS9ODXg"
         
       });
 
