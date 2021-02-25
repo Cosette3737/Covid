@@ -7,7 +7,7 @@ fetch('/covid_data')
         //console.log(mapdata);
         createBar(mapdata);
     function createBar(mapdata) {
-      console.log(mapdata),
+      console.log(mapdata);
       google.charts.load('current', {
         'packages':['geochart'],
         'mapsApiKey': "AIzaSyDSZfX2xxa071XwxZWy0xFI-jmlSWWSvgg",
