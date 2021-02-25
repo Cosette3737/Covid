@@ -4,7 +4,7 @@ fetch('/covid_data')
         return response.json();
     }).then(function (data) {
         let mapdata = data;
-        console.log(mapdata);
+        //console.log(mapdata);
         createBar(mapdata);
         });
 
@@ -113,7 +113,7 @@ fetch('/filtered_data')
     function updateInfo() {
       var dropDown = d3.select("#selDataset");
           var dataset = dropDown.property("value");
-          console.log(dataset); 
+           
             for (let i = 1; i < filtered_data.length; i++) {
                // console.log(filtered_data[i][0]); 
                label=["State", "Infected", "Deaths", "Hospitals", "Inequality", "Health Spending"];
