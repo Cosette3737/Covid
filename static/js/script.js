@@ -6,11 +6,12 @@ fetch('/covid_data')
         let mapdata = data;
         //console.log(mapdata);
         createBar(mapdata);
-    function createBar(mapdata) {
+    });
+function createBar(mapdata) {
       console.log(mapdata);
       google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': "AIzaSyDSZfX2xxa071XwxZWy0xFI-jmlSWWSvgg",
+        'mapsApiKey': "AIzaSyBbtf-cQpfWW8agzsIEXb5W9dIknS9ODXg",
         
       });
 
@@ -127,4 +128,4 @@ fetch('/filtered_data')
                     demo_meta.append("p").text(`State Health Spending: ${filtered_data[i][5]}`);
               }
             }}
-        })})
+        })
