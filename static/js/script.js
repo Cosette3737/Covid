@@ -11,10 +11,10 @@
 // function to create the map      
 function createMap (mapData) {
     // load the Google GeoChart package
-    console.log(mapData);
+    //console.log(mapData);
     google.charts.load('current', {
         'packages':['geochart'],
-        'mapsApiKey': "AIzaSyCyoQn8h1sxhW6eEPE7mwh2RTWG29qOmfA"
+        'mapsApiKey': "AIzaSyC8ZuVwhL5UUOmCw000vMesIrfUCdrcjuY"
     });
 
     // call function to draw the map
@@ -25,7 +25,7 @@ function createMap (mapData) {
 
         // set data
         var data = google.visualization.arrayToDataTable(mapData);
-        console.log(mapData);
+        //console.log(mapData);
         // set options
         var options = {
             colorAxis: {colors: ['#1c92e7','#49a7eb', '#60b2ee','#76bdf0','#8dc8f3','#a4d3f5','#badef7','#d1e9fa',]},
