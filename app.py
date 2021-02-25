@@ -46,7 +46,7 @@ def state_data():
     # creat dataframe of wins per country from database
     state_data = pd.read_sql('SELECT * FROM percent6;', connection)
 
-    print(state_data)
+    #print(state_data)
 
     
     state_data_list=[state_data.columns.values.tolist()] \
@@ -66,7 +66,7 @@ def filtered_data():
     # creat dataframe of wins per country from database
     filtered_data = pd.read_sql('SELECT * FROM filtered_data;', connection)
 
-    print(filtered_data)
+    #print(filtered_data)
 
     
     filtered_data_list=[filtered_data.columns.values.tolist()] \

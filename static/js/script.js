@@ -1,14 +1,12 @@
 fetch('/covid_data')
       .then(function(response) {
-          console.log(response);
+          //console.log(response);
         return response.json();
     }).then(function (data) {
         let mapdata = data;
         //console.log(mapdata);
         createBar(mapdata);
-        
-
-  function createBar(mapdata) {
+    function createBar(mapdata) {
       console.log(mapdata),
       google.charts.load('current', {
         'packages':['geochart'],
