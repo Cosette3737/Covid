@@ -6,7 +6,7 @@ fetch('/covid_data')
         let mapdata = data;
         //console.log(mapdata);
         createBar(mapdata);
-        });
+        
 
   function createBar(mapdata) {
       console.log(mapdata),
