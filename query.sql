@@ -47,3 +47,10 @@ CREATE VIEW filtered_data AS
 SELECT state, c.infected, c.deaths, c.hospitals, c.gini, c.health_spending
 FROM covid AS c; 
 select * from filtered_data;
+
+CREATE VIEW filtered_data3 
+AS
+SELECT state, c.infected, c.deaths, c.hospitals, CAST(c.gini*100 AS DECIMAL(5,2)), Cast(c.health_spending AS money)
+FROM covid AS c; 
+
+select * from filtered_data3;

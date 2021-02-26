@@ -64,7 +64,7 @@ def filtered_data():
     connection = engine.connect()
 
     # creat dataframe of wins per country from database
-    filtered_data = pd.read_sql('SELECT * FROM filtered_data;', connection)
+    filtered_data = pd.read_sql('SELECT * FROM filtered_data3;', connection)
 
     #print(filtered_data)
 
