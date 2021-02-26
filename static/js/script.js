@@ -44,56 +44,7 @@ function createMap (mapData) {
 }
 
 
-//fetch('/covid_data')
-//       .then(function(response) {
-//           //console.log(response);
-//         return response.json();
-//     }).then(function (data) {
-//         let mapdata = data;
-//         console.log(mapdata);
-//         createBar(mapdata);
-//     });
-  // function createBar(mapdata) {
-  //     console.log("hello");
-  //     google.charts.load('current', {
-  //       'packages':['geochart'],
-  //       'mapsApiKey': "AIzaSyBbtf-cQpfWW8agzsIEXb5W9dIknS9ODXg"
-        
-  //     });
 
-  //   // call function to draw the map
-  //     google.charts.setOnLoadCallback(drawRegionsMap);
-
-  //   // function to create map
-  //     function drawRegionsMap() {
-
-  //       // set data
-  //         var data = google.visualization.arrayToDataTable(mapdata);
-        
-  //         var options = {
-  //           colorAxis: {colors: ['#1c92e7',
-  //           '#49a7eb',
-  //           '#60b2ee',
-  //           '#76bdf0',
-  //           '#8dc8f3',
-  //           '#a4d3f5',
-  //           '#badef7',
-  //           '#d1e9fa',
-  //           ]},
-  //           backgroundColor: 'eff3f6',
-  //           region: 'US',
-  //           displayMode:'regions',
-  //           resolution: 'provinces',
-  //         };
-
-  //       // set where in html to put chart
-  //         var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-  //       // draw chart using data & options specified
-  //         chart.draw(data, options);
-  //   }
-  // }
-  
 fetch('/state_data')
       .then(function(response) {
           //console.log(response);
@@ -120,7 +71,7 @@ fetch('/state_data')
     var trace1 = {
         x: states,
         y: tested,
-        name: 'Population Tested %',
+        name: '% Tested',
         marker: {color: '#1c92e7'},
         type: 'bar'
       };
@@ -128,7 +79,7 @@ fetch('/state_data')
       var trace2 = {
         x: states,
         y: infected,
-        name: 'Positivity Rate',
+        name: '% Positive',
         marker: {color: '#808080'},
         type: 'bar'
       };
@@ -162,9 +113,7 @@ fetch('/filtered_data')
            
             for (let i = 1; i < filtered_data.length; i++) {
                // console.log(filtered_data[i][0]); 
-               label=["State", "Infected", "Deaths", "Hospitals", "Inequality", "Health Spending"];
               if (dataset === filtered_data[i][0]) {
-                 var ind = i;
                  var demo_meta = d3.select("#sample-metadata");
                   demo_meta.html("");
                     demo_meta.append("p").text(`State: ${filtered_data[i][0]}`);
