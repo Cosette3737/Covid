@@ -37,6 +37,5 @@ Deploying the dashboard on Heroku involved creating an app, installing a HerokuP
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Visit the Dataset Here: https://www.kaggle.com/nightranger77/covid19-state-data
-Visit the Project Here: https://covid-states-2020.herokuapp.com/
+Visit the Dataset Here: https://www.kaggle.com/nightranger77/covid19-state-data  | Visit the Project Here: https://covid-states-2020.herokuapp.com/
 
