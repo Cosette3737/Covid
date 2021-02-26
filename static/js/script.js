@@ -120,8 +120,8 @@ fetch('/filtered_data')
                     demo_meta.append("p").text(`Infected: ${filtered_data[i][1]}`);
                     demo_meta.append("p").text(`Deaths: ${filtered_data[i][2]}`);
                     demo_meta.append("p").text(`Hospitals: ${filtered_data[i][3]}`);
-                    demo_meta.append("p").text(`Inequality Rate: ${filtered_data[i][4]}`);
-                    demo_meta.append("p").text(`Health Spending : ${filtered_data[i][5]}`);
+                    demo_meta.append("p").text(`Gini Coeff: ${filtered_data[i][4]}`);
+                    demo_meta.append("p").text(`Health Spending: ${filtered_data[i][5]}`);
               }
             }}
         })
