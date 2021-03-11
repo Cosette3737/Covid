@@ -14,7 +14,11 @@ function createMap (mapData) {
     //pgconsole.log(mapData);
     google.charts.load('current', {
         'packages':['geochart'],
+<<<<<<< HEAD
         'mapsApiKey': 'AIzaSyC8ZuVwhL5UUOmCw000vMesIrfUCdrcjuY'
+=======
+        'mapsApiKey':"AIzaSyCyoQn8h1sxhW6eEPE7mwh2RTWG29qOmfA"
+>>>>>>> a8d0473a0333ea52285723a85d5b583ad9ebf6ce
     });
 
     // call function to draw the map
