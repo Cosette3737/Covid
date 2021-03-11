@@ -7,7 +7,7 @@ import sqlalchemy.dialects.sqlite
 import datetime as dt
 import pandas as pd
 import os
-from config import apikey
+
 
 
 app = Flask(__name__, 
